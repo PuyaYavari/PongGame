@@ -18,6 +18,7 @@ def run(board, inputHandler):
         print("Game Over")
 
 if __name__ == "__main__":
-    board = Board.Board(50, 20, Ball.Ball([10.0,10.0],[1,1]), Stick.Stick(5, 8, 2, {"min":0, "max":20}))
+    board = Board.Board(50, 20, Ball.Ball([10.0,10.0],[1,1]), \
+                Stick.Stick(5, 8, 2, {"min":0, "max":20}))
     inputHandler = InputHandler.InputHandler(board)
     run(board, inputHandler)

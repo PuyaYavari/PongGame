@@ -17,11 +17,17 @@ class  Board(object):
         elif self.stickMovement < 0:
             self.stick.moveDown()
         self.stickMovement = 0
-        if self.ball.positionForecast()[0] < 1.0 or (self.ball.positionForecast()[0] >= self.width and self.ball.positionForecast()[1] in range(*self.stick.getRange())):
+        if self.ball.positionForecast()[0] < 1.0 or \
+                    (self.ball.positionForecast()[0] >= self.width and \
+                    self.ball.positionForecast()[1] in \
+                    range(*self.stick.getRange())):
             self.ball.bounceVertical()
-        elif self.ball.positionForecast()[0] >= self.width and self.ball.positionForecast()[1] not in range(*self.stick.getRange()):
+        elif self.ball.positionForecast()[0] >= self.width and \
+                    self.ball.positionForecast()[1] not in \
+                    range(*self.stick.getRange()):
             return False
-        if self.ball.positionForecast()[1] < 1.0 or self.ball.positionForecast()[1] > self.height:
+        if self.ball.positionForecast()[1] < 1.0 or \
+                    self.ball.positionForecast()[1] > self.height:
             self.ball.bounceHorizontal()
         self.ball.move()
         return True
